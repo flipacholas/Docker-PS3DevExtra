@@ -37,6 +37,7 @@ RUN apk update && apk upgrade && apk add --no-cache alpine-sdk \
         mpc1-dev \
         openssl-dev \
         linux-headers \
+        findutils \
     && cd tmp \
     && git clone git://github.com/ps3dev/ps3toolchain.git ps3toolchain \
     && cd ps3toolchain \
@@ -46,6 +47,7 @@ RUN apk update && apk upgrade && apk add --no-cache alpine-sdk \
     && sh install-libraries.sh \
     && rm -Rf ps3toolchain \
     && rm install-libraries.sh
+    && find $PS3DEV -executable -type f -exec strip {} \;
 
 WORKDIR /src
 CMD ["/bin/ash"]
