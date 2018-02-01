@@ -1,8 +1,5 @@
-#!/bin/ash
+#!/bin/bash
 # This script will install other libraries to complement the SDK and give a better out-of-the-box support
-
-set -e
-set -o pipefail
 
 cd /
 # tiny3D for PSL1GHT (https://github.com/wargio/tiny3D)
