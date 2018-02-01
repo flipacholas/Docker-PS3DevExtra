@@ -1,7 +1,16 @@
 # Docker-PS3DevExtra
 
 This docker image is meant to help PS3 Homebrew developers providing an out-of-the-box setup with all the necessary libraries included and compiled.
-Uses alpine as base image to significantly reduce the container's size. 
+Uses alpine as base image to significantly reduce the container's size.
+
+## Choose your OS
+
+This project is divided in two branches:
+
+* [Master / Alpine](https://github.com/flipacholas/Docker-PS3DevExtra/tree/master): Uses alpine 3.7, smaller size.
+* [Ubuntu](https://github.com/flipacholas/Docker-PS3DevExtra/tree/ubuntu): Uses ubuntu 17:10, bigger size, more tools.
+
+If you just want to use the build tools, choose alpine. Otherwise if you would like to customise the image, ubuntu may help you better.
 
 ## Included Libraries
 
@@ -11,7 +20,7 @@ This container includes the following libraries:
 * [tiny3D](https://github.com/wargio/tiny3D): 2D/3D graphics.
 * [CG Toolkit](https://developer.nvidia.com/cg-toolkit): Nvidia's shading toolkit.
 * [PS3SOUNDLIB](https://github.com/wargio/ps3soundlib): Play PCM voices, MP3 and OGG files, using one SPU.
-* [Linux headers](https://www.kernel.org): Use some kernel funtions.
+* [Linux headers](https://www.kernel.org): Use some kernel functions.
 
 If you'd like more libraries to be included you can edit install-libraries.sh and send a pull request.
 
@@ -20,8 +29,9 @@ If you'd like more libraries to be included you can edit install-libraries.sh an
 Run this command in your project's directory:
 
 ```bash
-docker run -it --rm -v "$PWD:/src" flipacholas/ps3devextra make
+docker run -it --rm -v "$PWD:/src" flipacholas/ps3devextra:latest make
 ```
+Substitute 'latest' with 'ubuntu-latest' to use ubuntu branch.
 
 ## Customize
 
