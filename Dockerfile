@@ -10,7 +10,7 @@ ENV PATH    $PATH:$PS3DEV/bin:$PS3DEV/ppu/bin:$PS3DEV/spu/bin
 
 COPY install-libraries.sh /tmp
 
-RUN apk update && apk upgrade && apk add --no-cache alpine-sdk \
+RUN apk add --no-cache alpine-sdk \
         coreutils \
         autoconf \
         automake \
@@ -46,6 +46,8 @@ RUN apk update && apk upgrade && apk add --no-cache alpine-sdk \
     && sh toolchain.sh \
     && cd .. \
     && sh install-libraries.sh \
+
+RUN cd tmp \
     && rm -Rf ps3toolchain \
     && rm install-libraries.sh \
     && find $PS3DEV -type f -executable -exec sh -c "file -i '{}' | grep -q 'x-executable; charset=binary'" \; -print | xargs strip || true
