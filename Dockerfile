@@ -11,23 +11,18 @@ ENV PATH ${PATH}:${PS3DEV}/bin:${PS3DEV}/ppu/bin:${PS3DEV}/spu/bin
 COPY install-libraries.sh /
 
 RUN \
-  apt-get -y update && \
-  apt-get -y install autoconf bison build-essential flex git libelf-dev libgmp3-dev libncurses5-dev libssl-dev libtool-bin pkg-config python-dev texinfo wget zlib1g-dev file && \
-  apt-get -y clean autoclean autoremove && \
-  rm -rf /var/lib/{apt,dpkg,cache,log}/
-
-RUN \
+    apt-get -y update && \
+    apt-get -y install autoconf bison build-essential flex git libelf-dev libgmp3-dev libncurses5-dev libssl-dev libtool-bin pkg-config python-dev texinfo wget zlib1g-dev file && \
     git clone https://github.com/ps3dev/ps3toolchain.git && \
     cd ps3toolchain && \
     ./toolchain.sh && \
     cd .. && \
-    rm -Rf ps3toolchain
-
-RUN \
+    rm -Rf ps3toolchain && \
     sh install-libraries.sh && \
     rm install-libraries.sh && \
+    apt-get -y clean autoclean autoremove && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
     find $PS3DEV -type f -executable -exec sh -c "file -i '{}' | grep -q 'x-executable; charset=binary'" \; -print | xargs strip || true
-
 
 WORKDIR /src
 CMD ["/bin/bash"]
