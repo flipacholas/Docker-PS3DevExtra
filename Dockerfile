@@ -1,4 +1,5 @@
 FROM ubuntu:17.10
+ARG branch=ubuntu-latest
 
 MAINTAINER Rodrigo Copetti <rodrigo.copetti@outlook.com>
 
