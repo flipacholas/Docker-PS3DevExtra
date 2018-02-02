@@ -1,4 +1,5 @@
 FROM alpine:3.7
+ARG branch=latest
 
 MAINTAINER Rodrigo Copetti <rodrigo.copetti@outlook.com>
 
