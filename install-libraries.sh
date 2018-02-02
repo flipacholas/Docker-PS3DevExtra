@@ -8,9 +8,7 @@ make -C tiny3D
 rm -R tiny3D
 
 # CG Toolkit (https://developer.nvidia.com/cg-toolkit)
-wget http://developer.download.nvidia.com/cg/Cg_3.1/Cg-3.1_April2012_x86_64.tgz
-tar -xvzf Cg-3.1_April2012_x86_64.tgz
-rm Cg-3.1_April2012_x86_64.tgz
+apt-get -y install nvidia-cg-toolkit
 
 # PS3SOUNDLIB FOR PSL1GHT V2 (https://github.com/wargio/ps3soundlib)
 git clone https://github.com/wargio/ps3soundlib
