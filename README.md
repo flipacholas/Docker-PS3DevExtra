@@ -7,7 +7,7 @@ This docker image is meant to help PS3 Homebrew developers providing an out-of-t
 This project is divided in two branches:
 
 * [![](https://images.microbadger.com/badges/image/flipacholas/ps3devextra.svg)](https://microbadger.com/images/flipacholas/ps3devextra) [Master / Alpine](https://github.com/flipacholas/Docker-PS3DevExtra/tree/master): Uses alpine 3.7, smaller size.
-* [Ubuntu](https://github.com/flipacholas/Docker-PS3DevExtra/tree/ubuntu): Uses ubuntu 17:10, bigger size, more tools.
+* [![](https://images.microbadger.com/badges/image/flipacholas/ps3devextra:ubuntu-latest.svg)](https://microbadger.com/images/flipacholas/ps3devextra:ubuntu-latest "Get your own image badge on microbadger.com") [Ubuntu](https://github.com/flipacholas/Docker-PS3DevExtra/tree/ubuntu): Uses ubuntu 17:10, bigger size, more tools.
 
 If you just want to use the build tools, choose alpine. Otherwise if you would like to customise the image, ubuntu may help you better.
 
