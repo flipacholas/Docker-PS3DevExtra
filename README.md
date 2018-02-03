@@ -15,7 +15,7 @@ If you just want to use the build tools, choose alpine. Otherwise if you would l
 
 This container includes the following libraries:
 
-* [PSL1GHT](https://github.com/ps3dev/PSL1GHT): Main framework for developing PS3 Homebrew.
+* [PSL1GHT](https://github.com/ps3dev/PSL1GHT): Main framework for developing PS3 Homebrew, installed using [ps3toolchain](https://github.com/ps3dev/ps3toolchain).
 * [tiny3D](https://github.com/wargio/tiny3D): 2D/3D graphics.
 * [CG Toolkit](https://developer.nvidia.com/cg-toolkit): Nvidia's shading toolkit, only included in the Ubuntu build.
 * [PS3SOUNDLIB](https://github.com/wargio/ps3soundlib): Play PCM voices, MP3 and OGG files, using one SPU.
